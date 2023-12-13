@@ -17,15 +17,14 @@ export async function getEventById(id: string): Promise<Event> {
         ${EVENT_QUERY}
     }
   }`;
-  console.log(queryEvent)
+  
   const data = await fetchAPI(queryEvent);
-  //data.data.data -> yes, I did need this. 
   return data.data.data;
 }
 
-export async function getAllEventWithIds(): Promise<Event[]> {
+export async function getAllEventsWithIds(): Promise<Event[]> {
   const  query = `{ 
-    data: allEvent
+    data: allEvents
     {
       __typename
       total
@@ -49,5 +48,3 @@ function extractPosts({ data }: { data: EventResults }) {
 function extractPost({ data }: { data: Event }) {
   return data;
 }
-
-

@@ -1,36 +1,35 @@
-import Event, {EventResults} from "../../types/Events/events-type";
+import SPEAKER, {SpeakerResults} from "../../types/Events/speaker-type";
 import {fetchAPI} from "../Common/api"
-import {EVENT_QUERY,ALL_EVENT_QUERY} from "../../graphQl/Events/event-query";
+import {SPEAKER_QUERY,ALL_SPEAKER_QUERY} from "../../graphQl/Events/speaker-query";
 
 
-export async function getAllTalks(preview: boolean): Promise<Talk[]> {
-    const data = await fetchAPI(`${ALL_TALK}`);
+export async function getAllSpeakers(preview: boolean): Promise<SPEAKER[]> {
+    const data = await fetchAPI(`${ALL_SPEAKER_QUERY}`);
     
     return extractPosts(data.data);
 }
 
-export async function getEventById(id: string): Promise<Event> {
+export async function getSpeakerById(id: string): Promise<SPEAKER> {
 
   const queryEvent = `{ 
-    data: event(id: "${id}")
+    data: speaker(id: "${id}")
     {
-        ${TALK_QUERY}
+        ${SPEAKER_QUERY}
     }
   }`;
-  console.log(queryEvent)
+  
   const data = await fetchAPI(queryEvent);
-  //data.data.data -> yes, I did need this. 
   return data.data.data;
 }
 
-export async function getAllEventWithIds(): Promise<Event[]> {
+export async function getAllSpeakersWithIds(): Promise<SPEAKER[]> {
   const  query = `{ 
-    data: allEvent
+    data: allSpeakers
     {
       __typename
       total
       results {
-        ${EVENT_QUERY}
+        ${SPEAKER_QUERY}
       }
     }
   }`;
@@ -39,15 +38,13 @@ export async function getAllEventWithIds(): Promise<Event[]> {
    return extractPosts(data.data);
 }
 
-function extractPosts({ data }: { data: EventResults }) {
+function extractPosts({ data }: { data: SpeakerResults }) {
 
-    return data.results.map((post: Event) => {
+    return data.results.map((post: SPEAKER) => {
       return post;
     });
 }
 
-function extractPost({ data }: { data: Event }) {
+function extractPost({ data }: { data: SPEAKER }) {
   return data;
 }
-
-
