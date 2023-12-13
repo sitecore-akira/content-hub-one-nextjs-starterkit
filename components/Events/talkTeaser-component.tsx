@@ -1,16 +1,14 @@
 import stylesHp from '../../styles/Homepage/Homepage.module.css' 
 import Talk, {TalkResults} from "../../types/Events/talk-type"; 
-import Speaker, {SpeakerResults} from "../../types/Events/speaker-type";
 import Link from 'next/link' 
 import Image from 'next/image' 
  
 type Props = { 
     allTalks: TalkResults; 
-    allSpeakers: SpeakerResults;
 } 
-const TalkTeaserComponent = ({allTalks, allSpeakers}:Props) => { 
+
+const TalkTeaserComponent = ({allTalks}:Props) => { 
     const talks = allTalks.results; 
-    const speaker = allSpeakers.results; 
      
     return( 
         <div> 
@@ -19,7 +17,7 @@ const TalkTeaserComponent = ({allTalks, allSpeakers}:Props) => {
                     <div className={stylesHp.box}> 
                         <Image  
                             alt='' 
-                            src={speaker.speakerImage.results[0].fileUrl}
+                            src={talk.speaker.results[0].speakerImage.results[0].fileUrl}
                             width='500'
                             height= '500' 
                             className={stylesHp.boxImage} 

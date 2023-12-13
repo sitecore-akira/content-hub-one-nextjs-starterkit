@@ -7,6 +7,12 @@ export const AGENDA_QUERY = `
   talkTitle
   talkDescription
   time
+  image{
+    total
+    results{
+      ${MEDIA_QUERY}
+    }
+  }
   speaker{
     total
     results{

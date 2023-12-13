@@ -4,7 +4,8 @@ import stylesHp from '../styles/Homepage/Homepage.module.css';
 import {getAllHomepage, getHomepageById} from "../lib/Homepage/homepage-lib";
 import Homepage from "../types/Homepage/homepage-type";
 import FooterComponent from '../components/Homepage/footer-component';
-import RecipeTeaserComponent from '../components/Recipe/recipeTeaser-component';
+import TalkTeaserComponent from '../components/Events/talkTeaser-component';
+// import RecipeTeaserComponent from '../components/Recipe/recipeTeaser-component';
 import Image from 'next/image'
 import HeroBanner from '../components/Homepage/hero-banner';
 import { HOMEPAGE_ID } from '../lib/Common/constants';
@@ -61,8 +62,8 @@ const Homepage = ({allHomepage,homepage,event}: Props) => {
             richText={event.eventDescription} 
           />
         
-          <RecipeTeaserComponent
-            allRecipes={allHomepage[0].recipes}
+          <TalkTeaserComponent
+            allTalks={event.agenda}
           />
         </div>
 

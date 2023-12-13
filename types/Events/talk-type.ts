@@ -1,3 +1,4 @@
+import { MediaResults } from "../Common/media-type";
 import { SpeakerResults } from "./speaker-type"; 
  
 type Talk = { 
@@ -7,6 +8,7 @@ type Talk = {
    talkDescription: string 
    time: string 
    speaker: SpeakerResults 
+   image: MediaResults
    } 
  
 export default Talk 

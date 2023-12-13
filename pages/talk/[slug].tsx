@@ -36,7 +36,7 @@ type Params = {
     const allTalkPosts = await getAllTalksWithIds();
 
     return {
-      paths: allTalkPosts.map(({ id }) => `/recipes/${id}`) ?? [],
+      paths: allTalkPosts.map(({ id }) => `/talk/${id}`) ?? [],
       fallback: true,
     };
   }
@@ -58,10 +58,10 @@ const Post = ({talk,homepage}: Props) => {
                 <HeaderComponent 
                     allHeaders={homepage.header}
                 />
-                {/* <HeroBanner 
-                  heroImageUrl={talk?.ImageList?.results[0].fileUrl}
+                <HeroBanner 
+                  heroImageUrl={talk.image.results[0].fileUrl}
                   altText=''
-                /> */}
+                />
                 
                 <div className={stylesHp.boxedContainer} >
                     <h1>{talk?.talkTitle}</h1>
