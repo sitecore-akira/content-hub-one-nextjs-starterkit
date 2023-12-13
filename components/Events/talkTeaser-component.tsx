@@ -17,7 +17,7 @@ const TalkTeaserComponent = ({allTalks}:Props) => {
                         <Image  
                             alt='' 
                             src={talk.ImageList.results[0].fileUrl}
-                            width='500' 
+                            width='500'
                             height= '500' 
                             className={stylesHp.boxImage} 
                         /> 

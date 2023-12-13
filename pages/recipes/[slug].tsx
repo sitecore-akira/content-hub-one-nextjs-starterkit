@@ -8,7 +8,7 @@ import FooterComponent from "../../components/Homepage/footer-component";
 import HeroBanner from "../../components/Homepage/hero-banner"; 
 import RichText from "../../components/Common/richText-component"; 
 import Talk from "../../types/Events/talk-type"; 
-import { getAllTalksWithIds, getTalkById } from "../../lib/Events/talk-lib"; 
+import { getAllTalksWithIds, getTalkById } from "../../lib/Events/speaker-lib"; 
 import Image from 'next/image' 
  
 const Renderer = require("prosemirror-to-html-js").Renderer; 
