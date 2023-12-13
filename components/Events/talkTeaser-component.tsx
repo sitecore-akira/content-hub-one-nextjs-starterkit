@@ -14,13 +14,13 @@ const TalkTeaserComponent = ({allTalks}:Props) => {
             {talks.map((talk: Talk) => ( 
                 <div key={talk.id} className={stylesHp.boxOuter}> 
                     <div className={stylesHp.box}> 
-                        <Image  
+                        {/* <Image  
                             alt='' 
-                            src={talk.ImageList.results[0].fileUrl}
+                            src={talk.image.results[0].fileUrl}
                             width='500'
                             height= '500' 
                             className={stylesHp.boxImage} 
-                        /> 
+                        />  */}
                         <h2>{talk.talkTitle}</h2> 
                         <p className={stylesHp.boxText}> 
                             {talk.talkDescription} 
