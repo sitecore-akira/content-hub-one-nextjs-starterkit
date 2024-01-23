@@ -9,8 +9,8 @@ import TalkTeaserComponent from '../components/Events/talkTeaser-component';
 import Image from 'next/image'
 import HeroBanner from '../components/Homepage/hero-banner';
 import { HOMEPAGE_ID } from '../lib/Common/constants';
-import { getEventById } from '../lib/Events/events-lib';
-import Event from '../types/Events/events-type';
+import { getEventById } from '../lib/Events/event-lib';
+import Event from '../types/Events/event-type';
 import RichText from '../components/Common/richText-component';
 
 export async function getStaticProps({ preview = false}){

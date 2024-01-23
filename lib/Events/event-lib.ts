@@ -1,4 +1,4 @@
-import Event, {EventResults} from "../../types/Events/events-type";
+import Event, {EventResults} from "../../types/Events/event-type";
 import {fetchAPI} from "../Common/api"
 import {EVENT_QUERY,ALL_EVENT_QUERY} from "../../graphQl/Events/event-query";
 

@@ -28,7 +28,6 @@ type Props = {
 }
 
 const Homepage = ({allHomepage,homepage}: Props) => {
- //const homepage = allHomepage[0];
 
   return (
     <div className={stylesHp.container}>
